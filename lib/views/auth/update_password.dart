@@ -3,8 +3,8 @@ import 'package:apitest/compoment/custom_textfield.dart';
 import 'package:flutter/material.dart';
 // import the file where CustomTextField is defined
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class UpdatePasswordScreen extends StatelessWidget {
+  const UpdatePasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
