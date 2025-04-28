@@ -9,16 +9,17 @@ class AuthServices implements AuthProviderBase {
 
   AuthServices(this.ref);
 
+
   @override
-  Future<Response> login(String phone, String password) async {
-    final response=await ref.read(apiClientProvider).post(
-      AppConstant.login,
-      data: {
-        "phone": phone,
-        "password": password
-      }
-    );
+  Future<Response> login({
+    required String phone,
+    required String password,
+  }) async {
+    final response = await ref
+        .read(apiClientProvider)
+        .post(AppConstant.login, data: {"phone": phone, "password": password});
     return response;
-    
   }
 }
+
+final authServiceProvider = Provider((ref) => AuthServices(ref));
