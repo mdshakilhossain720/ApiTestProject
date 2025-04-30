@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:apitest/views/auth/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -53,8 +54,8 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(
-                      'assets/logo.png', // Replace with your logo
+                    SvgPicture.asset(
+                      'assets/svg/radio.svg', // Replace with your logo
                       height: 120,
                     ),
                     const SizedBox(height: 20),

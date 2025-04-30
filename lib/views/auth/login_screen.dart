@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../payment_section/payment_section.dart';
+import 'regestion.dart';
 // import the file where CustomTextField is defined
 
 class LoginScreen extends StatelessWidget {
@@ -86,7 +87,25 @@ class LoginScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (_) => PaymentSectionScreen()),
                   );
                 },
+
+                
               ),
+              SizedBox(height: 20),
+
+              //regesetion
+               PrimaryButton(
+                text: "Regestration",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => RegestionScreen()),
+                  );
+                },
+
+                
+              ),
+
+
             ],
           ),
         ),

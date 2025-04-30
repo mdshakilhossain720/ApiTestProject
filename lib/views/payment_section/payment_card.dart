@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:apitest/views/payment_section/payment_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -12,7 +11,7 @@ class PaymentCard extends StatelessWidget {
     super.key,
     // required this.paymentGateways,
     required this.isActive,
-    required this.onTap, 
+    required this.onTap,
   });
 
   @override
