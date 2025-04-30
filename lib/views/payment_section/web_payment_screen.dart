@@ -118,10 +118,10 @@ class _WebPayementScreenState extends ConsumerState<WebPayementScreen> {
 }
 
 class WebPaymentScreenArg {
-  final int? orderId;
+ 
   final String paymentUrl;
   WebPaymentScreenArg({
-    this.orderId,
+  
     required this.paymentUrl,
   });
 }
