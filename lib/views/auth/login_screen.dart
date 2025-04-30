@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../payment_section/payment_section.dart';
+import 'Forget_password_screen.dart';
 import 'regestion.dart';
 // import the file where CustomTextField is defined
 
@@ -34,6 +35,8 @@ class LoginScreen extends StatelessWidget {
                 hint: "Enter your email",
                 controller: emailController,
               ),
+
+          
               CustomTextField(
                 label: "Password",
                 isRequired: true,
@@ -42,6 +45,12 @@ class LoginScreen extends StatelessWidget {
                 controller: passwordController,
               ),
               const SizedBox(height: 20),
+                  Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => ForgetPasswordScreen()));
+                }, child: Text("Forgot Password"),)),
+                 const SizedBox(height: 20),
               Consumer(
                 builder: (context, ref, child) {
                   final isLoading = ref.watch(authControllerProvider);
