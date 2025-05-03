@@ -28,6 +28,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 hint: "Enter your email",
                 controller: emailController,
               ),
+               SizedBox(height: 50),
 
 
               PrimaryButton(
