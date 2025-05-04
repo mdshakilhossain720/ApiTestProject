@@ -1,4 +1,5 @@
 import 'package:apitest/config/common_response.dart';
+import 'package:apitest/models/auth_model/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod/riverpod.dart';
 
@@ -30,6 +31,27 @@ class AuthController extends StateNotifier<bool> {
       debugPrint(error.toString());
       return CommonResponse(isSuccess: false, message: error.toString());
     }
+  }
+
+  // regestion controller
+  Future<CommonResponse> singUp({required SignUpModel singUpInfo}) async{
+    try {
+      state =true;
+      final response = await ref.read(authServiceProvider).register(singUpInfo: singUpInfo);
+      final String message = response.data['message'];
+      if(response.statusCode == 200){
+        
+        state = false;
+        return CommonResponse(isSuccess: true, message: message);
+      }
+      state = false;
+      return CommonResponse(isSuccess: true, message: message);
+    } catch (error) {
+      state = false;
+      debugPrint(error.toString());
+      return CommonResponse(isSuccess: false, message: error.toString());
+    }
+
   }
 }
 

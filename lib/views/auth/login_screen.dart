@@ -1,6 +1,6 @@
 import 'package:apitest/compoment/custom_button.dart';
 import 'package:apitest/compoment/custom_textfield.dart';
-import 'package:apitest/controller/login_controller.dart';
+import 'package:apitest/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
