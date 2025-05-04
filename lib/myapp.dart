@@ -1,4 +1,4 @@
-import 'package:apitest/views/splash_screen.dart';
+import 'package:apitest/route.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,11 +6,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: SplashScreen(),
+
+      routerConfig: router,
     );
   }
 }
