@@ -1,4 +1,7 @@
 import 'package:apitest/myapp.dart';
+import 'package:apitest/utils/notifaction_handle.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
@@ -10,7 +13,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 // Plugin must be initialized before using
-  await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
+  //await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
   await setupFlutterNotifications();
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
   firebaseMessagingForgroundHandler();
