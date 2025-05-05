@@ -5,7 +5,16 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+ WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+// Plugin must be initialized before using
+  await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
+  await setupFlutterNotifications();
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+  firebaseMessagingForgroundHandler();
+  print('FCM TOKEN: ${await FirebaseMessaging.instance.getToken()}');
   // Initialize Hive
   await Hive.initFlutter();
 
