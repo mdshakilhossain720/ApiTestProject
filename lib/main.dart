@@ -10,7 +10,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 Future<void> main() async {
  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    //options: DefaultFirebaseOptions.currentPlatform,
   );
 // Plugin must be initialized before using
   //await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
